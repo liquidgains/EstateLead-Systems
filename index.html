@@ -1877,6 +1877,386 @@
       height: 460px;
     }
   }
+
+  /* ============================================
+     CASE STUDY SECTION
+  ============================================ */
+  #case-study {
+    padding: var(--space-3xl) 0;
+    background: linear-gradient(to bottom, var(--navy-deep), var(--navy-deepest));
+    position: relative;
+  }
+
+  #case-study::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(59,130,246,0.3), transparent);
+  }
+
+  /* Agency stats bar */
+  .cs-agency-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    background: rgba(11,22,41,0.6);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg) var(--space-xl);
+    margin-bottom: var(--space-2xl);
+    flex-wrap: wrap;
+  }
+
+  .cs-agency-stat {
+    text-align: center;
+    padding: 0 var(--space-xl);
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .cs-agency-stat-val {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--blue-bright);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .cs-agency-stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .cs-agency-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--border-subtle);
+    flex-shrink: 0;
+  }
+
+  /* Compare grid */
+  .cs-compare-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: var(--space-lg);
+    align-items: start;
+    margin-bottom: var(--space-xl);
+  }
+
+  .cs-card {
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-subtle);
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .cs-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .cs-before {
+    background: rgba(239,68,68,0.04);
+    border-color: rgba(239,68,68,0.12);
+  }
+
+  .cs-before:hover {
+    box-shadow: 0 20px 50px rgba(239,68,68,0.08);
+  }
+
+  .cs-after {
+    background: rgba(16,185,129,0.04);
+    border-color: rgba(16,185,129,0.15);
+  }
+
+  .cs-after:hover {
+    box-shadow: 0 20px 50px rgba(16,185,129,0.1);
+  }
+
+  .cs-card-header {
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cs-card-badge {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  .before-badge {
+    background: rgba(239,68,68,0.12);
+    color: #ef4444;
+    border: 1px solid rgba(239,68,68,0.2);
+  }
+
+  .after-badge {
+    background: rgba(16,185,129,0.12);
+    color: var(--success);
+    border: 1px solid rgba(16,185,129,0.2);
+  }
+
+  .cs-card-subtitle {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  .cs-metrics {
+    padding: var(--space-md) var(--space-lg);
+    display: grid;
+    gap: 0;
+  }
+
+  .cs-metric-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding: 11px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .cs-metric-row:last-child {
+    border-bottom: none;
+  }
+
+  .cs-metric-total {
+    padding-top: var(--space-md);
+    margin-top: 4px;
+  }
+
+  .cs-metric-label {
+    font-size: 0.83rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+  }
+
+  .cs-metric-val {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .cs-metric-val.good { color: var(--success); }
+  .cs-metric-val.bad { color: #ef4444; }
+  .cs-metric-val.neutral { color: var(--text-secondary); }
+
+  .cs-metric-total .cs-metric-label {
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 0.88rem;
+  }
+
+  .cs-metric-total .cs-metric-val {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .cs-footnote {
+    padding: 10px var(--space-lg);
+    font-size: 0.72rem;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+    border-top: 1px solid var(--border-subtle);
+    background: rgba(255,255,255,0.02);
+  }
+
+  /* VS divider */
+  .cs-vs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding-top: 80px;
+  }
+
+  .cs-vs-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--border-medium), transparent);
+  }
+
+  .cs-vs-badge {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--border-medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--navy-mid);
+  }
+
+  /* Revenue delta bar */
+  .cs-delta-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xl);
+    padding: var(--space-xl);
+    background: rgba(16,185,129,0.06);
+    border: 1px solid rgba(16,185,129,0.18);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-xl);
+    flex-wrap: wrap;
+  }
+
+  .cs-delta-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+
+  .cs-delta-sub {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+  }
+
+  .cs-delta-amount {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--success);
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+  }
+
+  .cs-delta-roi {
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    margin-top: 4px;
+    text-align: right;
+  }
+
+  /* System explainer */
+  .cs-explainer {
+    background: rgba(11,22,41,0.5);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .cs-explainer-header {
+    padding: var(--space-md) var(--space-xl);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-subtle);
+    background: rgba(255,255,255,0.02);
+  }
+
+  .cs-explainer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: var(--space-lg) var(--space-xl);
+  }
+
+  .cs-explainer-item {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border-radius: var(--radius-sm);
+    transition: background var(--transition);
+  }
+
+  .cs-explainer-item:hover {
+    background: rgba(59,130,246,0.04);
+  }
+
+  .cs-exp-num {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: rgba(59,130,246,0.25);
+    letter-spacing: -0.04em;
+    flex-shrink: 0;
+    line-height: 1.2;
+  }
+
+  .cs-exp-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+  }
+
+  .cs-exp-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .cs-disclaimer {
+    padding: var(--space-md) var(--space-xl);
+    font-size: 0.72rem;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-subtle);
+    letter-spacing: 0.03em;
+    font-style: italic;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .cs-compare-grid {
+      grid-template-columns: 1fr;
+    }
+    .cs-vs {
+      flex-direction: row;
+      padding-top: 0;
+      justify-content: center;
+    }
+    .cs-vs-line {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border-medium), transparent);
+    }
+    .cs-explainer-grid {
+      grid-template-columns: 1fr;
+    }
+    .cs-delta-bar {
+      flex-direction: column;
+      text-align: center;
+    }
+    .cs-delta-roi { text-align: center; }
+    .cs-agency-bar { gap: var(--space-md); }
+    .cs-agency-divider { display: none; }
+  }
+
+  @media (max-width: 768px) {
+    .cs-agency-stat { min-width: 80px; padding: 0 var(--space-sm); }
+    .cs-agency-stat-val { font-size: 1.4rem; }
+  }
+
 </style>
 </head>
 <body>
@@ -1895,7 +2275,7 @@
       <li><a href="#how-it-works">How It Works</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="https://calendar.google.com/calendar/u/0/appointments/schedules/XXXXXXXX" target="_blank" class="nav-cta">Book a Call →</a></li>
+      <li><a href="https://calendar.app.google/2rDHqc7NjkifWYqe7" target="_blank" class="nav-cta">Book a Call →</a></li>
     </ul>
     <div class="nav-mobile-btn" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -1921,10 +2301,10 @@
             <span class="text-gradient">Due to Slow Response.</span>
           </h1>
           <p class="hero-subheadline">
-            We build complete lead systems for small real estate agencies — instant WhatsApp alerts, high-converting landing pages, and structured CRM automation. Every second counts.
+            Your competitor called the buyer back in 3 minutes. You called in 3 hours. That's the deal you lost. We fix that — with a complete lead system built around speed, structure, and zero manual steps.
           </p>
           <div class="hero-cta-group">
-            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/XXXXXXXX" target="_blank" class="btn-primary btn-booking">
+            <a href="https://calendar.app.google/2rDHqc7NjkifWYqe7" target="_blank" class="btn-primary btn-booking">
               <span>📅</span> Book Free System Audit
             </a>
             <a href="https://wa.me/919011395656" target="_blank" class="btn-secondary">
@@ -1961,9 +2341,9 @@
     <div class="container">
       <div class="section-header">
         <div class="section-label">The Problem</div>
-        <h2>Your Leads Are Slipping Through<br>The Cracks — Right Now.</h2>
+        <h2>You're Losing Deals Right Now.<br>Not Next Month. Today.</h2>
         <p class="section-intro" style="margin: var(--space-md) auto 0;">
-          A buyer inquires. You respond hours later. They've already signed with the agency that called back in three minutes. This isn't bad luck — it's a system failure.
+          A buyer submitted an inquiry 45 minutes ago. They've already spoken to two other agents. One of them is closing the deal tonight. This is happening every week — and most agency owners have no idea.
         </p>
       </div>
 
@@ -1971,42 +2351,42 @@
         <div class="problem-card">
           <div class="problem-icon">📧</div>
           <h3>Leads Buried in Email</h3>
-          <p>Website inquiries land in a crowded inbox. No notification. No priority. No urgency. The lead goes cold before you even see it.</p>
+          <p>Inquiries land between 50 other emails. No alert. No urgency. By the time you see it, the buyer has already moved on. Email is where leads go to die.</p>
           <div class="problem-stat">↑ 70% of leads never get a timely response</div>
         </div>
 
         <div class="problem-card">
           <div class="problem-icon">🐢</div>
-          <h3>Slow Agent Response</h3>
-          <p>Agents are on calls, showing properties, or simply unaware. By the time they respond, the window of opportunity has closed permanently.</p>
+          <h3>Agents Respond Hours Later</h3>
+          <p>They're on site visits, on calls, or simply unaware a lead came in. No system pushes them to act. So they don't — and the deal walks out the door.</p>
           <div class="problem-stat">↓ Response rates drop 78% after 5 minutes</div>
         </div>
 
         <div class="problem-card">
           <div class="problem-icon">📱</div>
-          <h3>Buyers Contact Multiple Agents</h3>
-          <p>Today's property buyers submit inquiries to three or four agencies simultaneously. They move forward with whoever responds first — not whoever is best.</p>
+          <h3>Buyers Contact 3–4 Agencies at Once</h3>
+          <p>This isn't loyalty — it's a race. Your buyer sent the same inquiry to your three closest competitors. Whoever calls first gets the meeting. Whoever gets the meeting closes.</p>
           <div class="problem-stat">↑ Avg. buyer contacts 3.4 agencies at once</div>
         </div>
 
         <div class="problem-card">
           <div class="problem-icon">⚡</div>
           <h3>Speed Is the Only Differentiator</h3>
-          <p>You don't win because you have better listings. You win because you called first. Speed isn't an advantage anymore — it's the entry requirement.</p>
+          <p>Not your listings. Not your experience. Not your fees. Speed. The agent who picks up first controls the conversation. Everything else is secondary.</p>
           <div class="problem-stat">→ First responder closes 35–50% more deals</div>
         </div>
 
         <div class="problem-card">
           <div class="problem-icon">💸</div>
-          <h3>Every Delay Costs Commission</h3>
-          <p>A missed 90L property deal costs your agency ₹90,000+ in lost commission. How many deals did you lose last month due to slow response?</p>
+          <h3>Every Delay Is a Commission Lost</h3>
+          <p>A missed ₹90L inquiry costs ₹90,000+ in commission. Multiply that by 6 missed leads a month. That's over ₹5 lakh walking out the door — every single month.</p>
           <div class="problem-stat">⚠ Average agency loses 6–8 deals/month to speed</div>
         </div>
 
         <div class="problem-card">
           <div class="problem-icon">📋</div>
-          <h3>No Lead Visibility</h3>
-          <p>No pipeline. No follow-up structure. Leads exist as scattered notes, WhatsApp messages, and memory. Nothing is tracked, nothing is optimized.</p>
+          <h3>Nothing Tracked. Nothing Followed Up.</h3>
+          <p>Leads live in WhatsApp chats, scattered notes, and someone's memory. No pipeline. No follow-up structure. No visibility. You can't fix what you can't see.</p>
           <div class="problem-stat">→ 85% of small agencies have no CRM system</div>
         </div>
       </div>
@@ -2015,9 +2395,9 @@
         <div class="callout-icon-large">⚠️</div>
         <div>
           <div class="problem-callout-text">
-            In real estate, <span>the fastest responder wins</span> — not the most experienced agent, not the best listings, not the lowest fees.
+            In real estate, <span>the fastest responder wins</span> — not the most experienced, not the best listings, not the lowest fees. Speed is the only thing buyers reward.
           </div>
-          <div class="problem-callout-meta">If your agency doesn't have a structured response system, you're competing with one hand tied behind your back.</div>
+          <div class="problem-callout-meta">Without a structured response system, you are handing your competitors a 3-minute head start on every single lead.</div>
         </div>
       </div>
     </div>
@@ -2086,14 +2466,14 @@
     <div class="container">
       <div class="section-header">
         <div class="section-label">Key Benefits</div>
-        <h2>What Changes When You<br>Run the Right System</h2>
+        <h2>What Happens When Your<br>Agency Stops Losing Leads</h2>
       </div>
 
       <div class="benefits-grid">
         <div class="benefit-card">
           <span class="benefit-icon">🚀</span>
           <h3>Instant Lead Alerts</h3>
-          <p>The moment a prospect submits a form, your agent receives a structured WhatsApp notification with complete lead details — name, phone, requirement, and budget. No lag. No email refresh.</p>
+          <p>The moment a prospect submits a form, your agent gets a structured WhatsApp notification — name, phone, budget, requirement. Under 60 seconds. No email. No delay. No excuses.</p>
           <div class="benefit-metric">
             <div class="num">&lt;60s</div>
             <div class="label">average alert delivery time</div>
@@ -2103,7 +2483,7 @@
         <div class="benefit-card">
           <span class="benefit-icon">📊</span>
           <h3>Structured CRM Tracking</h3>
-          <p>Stop managing leads in WhatsApp chats and sticky notes. Every inquiry enters a proper pipeline with status tracking, follow-up scheduling, and agent assignment — built for teams of 3 to 10.</p>
+          <p>Every lead enters a proper pipeline the second it comes in. Status tracked. Follow-ups scheduled. Agent assigned. Full visibility — so nothing ever falls through the cracks again.</p>
           <div class="benefit-metric">
             <div class="num">100%</div>
             <div class="label">lead visibility at all times</div>
@@ -2113,7 +2493,7 @@
         <div class="benefit-card">
           <span class="benefit-icon">📈</span>
           <h3>Higher Closing Rate</h3>
-          <p>When you respond first and follow up systematically, your closing rate improves dramatically. It's not magic — it's infrastructure. Agencies using our system report measurably better conversion within 30 days.</p>
+          <p>Respond first. Follow up on time. Close more. Agencies on our system see measurable improvement within the first 30 days — not because they got better at sales, but because they stopped losing deals to slow response.</p>
           <div class="benefit-metric">
             <div class="num">+40%</div>
             <div class="label">avg. improvement in conversion</div>
@@ -2130,9 +2510,9 @@
     <div class="container">
       <div class="section-header">
         <div class="section-label">Process</div>
-        <h2>Live in 10 Days.<br>Three Clear Steps.</h2>
+        <h2>Live in 10 Days.<br>Zero Technical Work on Your End.</h2>
         <p class="section-intro" style="margin: var(--space-md) auto 0;">
-          We handle the entire build. You focus on closing deals. No technical knowledge required on your end.
+          We build everything. You show up for a 45-minute call, review the system, and start closing faster. That's it.
         </p>
       </div>
 
@@ -2205,7 +2585,7 @@
               <span class="booking-cal-label">Schedule a Call · EstateLead Systems</span>
             </div>
             <iframe
-              src="https://calendar.google.com/calendar/u/0/appointments/schedules/XXXXXXXX"
+              src="https://calendar.app.google/2rDHqc7NjkifWYqe7"
               class="booking-iframe"
               frameborder="0"
               title="Book a Free System Audit"
@@ -2266,6 +2646,178 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       CASE STUDY SECTION
+  ============================================ -->
+  <section id="case-study">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Revenue Impact</div>
+        <h2>How One Agency Could Add<br><span class="text-gradient">4 Extra Deals Per Month</span></h2>
+        <p class="section-intro" style="margin: var(--space-md) auto 0;">
+          A hypothetical but entirely realistic scenario based on a 5-agent agency operating in India's mid-ticket residential market.
+        </p>
+      </div>
+
+      <div class="cs-agency-bar">
+        <div class="cs-agency-stat">
+          <div class="cs-agency-stat-val">5</div>
+          <div class="cs-agency-stat-label">Agents</div>
+        </div>
+        <div class="cs-agency-divider"></div>
+        <div class="cs-agency-stat">
+          <div class="cs-agency-stat-val">₹90L</div>
+          <div class="cs-agency-stat-label">Avg. Property Value</div>
+        </div>
+        <div class="cs-agency-divider"></div>
+        <div class="cs-agency-stat">
+          <div class="cs-agency-stat-val">2%</div>
+          <div class="cs-agency-stat-label">Commission Rate</div>
+        </div>
+        <div class="cs-agency-divider"></div>
+        <div class="cs-agency-stat">
+          <div class="cs-agency-stat-val">₹1.8L</div>
+          <div class="cs-agency-stat-label">Commission Per Deal</div>
+        </div>
+      </div>
+
+      <div class="cs-compare-grid">
+
+        <!-- BEFORE -->
+        <div class="cs-card cs-before">
+          <div class="cs-card-header">
+            <div class="cs-card-badge before-badge">Before EstateLead</div>
+            <div class="cs-card-subtitle">Typical unstructured agency</div>
+          </div>
+          <div class="cs-metrics">
+            <div class="cs-metric-row">
+              <span class="cs-metric-label">Monthly website inquiries</span>
+              <span class="cs-metric-val neutral">40</span>
+            </div>
+            <div class="cs-metric-row">
+              <span class="cs-metric-label">Avg. response time</span>
+              <span class="cs-metric-val bad">3–5 hours</span>
+            </div>
+            <div class="cs-metric-row">
+              <span class="cs-metric-label">Leads contacted within 5 min</span>
+              <span class="cs-metric-val bad">~8 (20%)</span>
+            </div>
+            <div class="cs-metric-row">
+              <span class="cs-metric-label">Leads lost to faster competitors</span>
+              <span class="cs-metric-val bad">~24 (60%)</span>
+            </div>
+            <div class="cs-metric-row">
+              <span class="cs-metric-label">Deals closed per month</span>
+              <span class="cs-metric-val bad">4</span>
+            </div>
+            <div class="cs-metric-row cs-metric-total">
+              <span class="cs-metric-label">Monthly commission revenue</span>
+              <span class="cs-metric-val bad">₹7.2L</span>
+            </div>
+          </div>
+          <div class="cs-footnote">
+            8 contacted leads × 50% close rate = 4 deals × ₹1.8L = ₹7.2L
+          </div>
+        </div>
+
+        <!-- VS DIVIDER -->
+        <div class="cs-vs">
+          <div class="cs-vs-line"></div>
+          <div class="cs-vs-badge">VS</div>
+          <div class="cs-vs-line"></div>
+        </div>
+
+        <!-- AFTER -->
+        <div class="cs-card cs-after">
+          <div class="cs-card-header">
+            <div class="cs-card-badge after-badge">After EstateLead</div>
+            <div class="cs-card-subtitle">System-driven instant response</div>
+          </div>
+          <div class="cs-metrics">
+            <div class="cs-metric-row">
+              <span class="cs-metric-label">Monthly website inquiries</span>
+              <span class="cs-metric-val neutral">40</span>
+            </div>
+            <div class="cs-metric-row">
+              <span class="cs-metric-label">Avg. response time</span>
+              <span class="cs-metric-val good">&lt; 60 seconds</span>
+            </div>
+            <div class="cs-metric-row">
+              <span class="cs-metric-label">Leads contacted within 5 min</span>
+              <span class="cs-metric-val good">~32 (80%)</span>
+            </div>
+            <div class="cs-metric-row">
+              <span class="cs-metric-label">Leads lost to faster competitors</span>
+              <span class="cs-metric-val good">~6 (15%)</span>
+            </div>
+            <div class="cs-metric-row">
+              <span class="cs-metric-label">Deals closed per month</span>
+              <span class="cs-metric-val good">8</span>
+            </div>
+            <div class="cs-metric-row cs-metric-total">
+              <span class="cs-metric-label">Monthly commission revenue</span>
+              <span class="cs-metric-val good">₹14.4L</span>
+            </div>
+          </div>
+          <div class="cs-footnote">
+            32 contacted leads × 25% close rate = 8 deals × ₹1.8L = ₹14.4L
+          </div>
+        </div>
+
+      </div>
+
+      <!-- REVENUE DELTA -->
+      <div class="cs-delta-bar">
+        <div class="cs-delta-left">
+          <div class="cs-delta-label">Additional monthly revenue from speed alone</div>
+          <div class="cs-delta-sub">4 extra deals × ₹1.8L commission per deal</div>
+        </div>
+        <div class="cs-delta-right">
+          <div class="cs-delta-amount">+ ₹7.2L / month</div>
+          <div class="cs-delta-roi">System cost: ₹28,000 one-time · ROI in under 4 days</div>
+        </div>
+      </div>
+
+      <!-- SYSTEM EXPLANATION -->
+      <div class="cs-explainer">
+        <div class="cs-explainer-header">How the system produces this result</div>
+        <div class="cs-explainer-grid">
+          <div class="cs-explainer-item">
+            <div class="cs-exp-num">01</div>
+            <div class="cs-exp-body">
+              <div class="cs-exp-title">Inquiry lands on landing page</div>
+              <div class="cs-exp-desc">Buyer submits form. System captures name, phone, budget, and requirement instantly — no manual input needed.</div>
+            </div>
+          </div>
+          <div class="cs-explainer-item">
+            <div class="cs-exp-num">02</div>
+            <div class="cs-exp-body">
+              <div class="cs-exp-title">Agent gets WhatsApp alert in &lt;60 sec</div>
+              <div class="cs-exp-desc">Full lead details pushed directly to the right agent's WhatsApp. No checking email. No missing notifications.</div>
+            </div>
+          </div>
+          <div class="cs-explainer-item">
+            <div class="cs-exp-num">03</div>
+            <div class="cs-exp-body">
+              <div class="cs-exp-title">Lead enters CRM pipeline automatically</div>
+              <div class="cs-exp-desc">Every inquiry is logged, tracked, and assigned. Follow-ups are scheduled. Nothing is forgotten. Nothing is left to memory.</div>
+            </div>
+          </div>
+          <div class="cs-explainer-item">
+            <div class="cs-exp-num">04</div>
+            <div class="cs-exp-body">
+              <div class="cs-exp-title">Agency consistently wins the speed race</div>
+              <div class="cs-exp-desc">While competitors are still checking email, your agent is already on the call. That's the entire advantage — and it compounds every month.</div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-disclaimer">* Figures are illustrative estimates based on industry data. Individual results will vary by market, team quality, and follow-up execution.</div>
+      </div>
+
     </div>
   </section>
 
@@ -2467,14 +3019,14 @@
       <div class="cta-inner">
         <div class="cta-urgency">Limited onboarding slots this month</div>
         <h2>
-          Your Competitors Are<br>
-          <span class="text-gradient">Already Responding Faster.</span>
+          Every Day You Wait,<br>
+          <span class="text-gradient">Another Deal Goes to a Competitor.</span>
         </h2>
         <p>
-          Every day without a proper lead system is another day you're handing deals to your competition. Let's fix that — starting with a free 45-minute system audit.
+          You already know leads are slipping through. The question is how many more you'll lose before fixing it. Book a free 15-minute audit — we'll show you exactly where and how to stop the bleed.
         </p>
         <div class="cta-actions">
-          <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/XXXXXXXX" target="_blank" class="btn-primary btn-booking">
+          <a href="https://calendar.app.google/2rDHqc7NjkifWYqe7" target="_blank" class="btn-primary btn-booking">
             <span>📅</span> Book Your Free Audit
           </a>
           <a href="https://wa.me/919011395656" target="_blank" class="btn-secondary">
