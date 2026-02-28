@@ -1678,6 +1678,205 @@
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
   }
+  /* ============================================
+     BOOKING BUTTON VARIANT
+  ============================================ */
+  .btn-booking {
+    background: linear-gradient(135deg, var(--blue-electric), var(--cyan));
+    box-shadow: 0 6px 30px rgba(59,130,246,0.3);
+  }
+
+  .btn-booking:hover {
+    box-shadow: 0 14px 50px rgba(59,130,246,0.5);
+    transform: translateY(-3px);
+  }
+
+  /* ============================================
+     BOOKING SECTION
+  ============================================ */
+  #booking {
+    padding: var(--space-3xl) 0;
+    background: var(--navy-mid);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #booking::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(59,130,246,0.3), transparent);
+  }
+
+  #booking::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(34,211,238,0.2), transparent);
+  }
+
+  .booking-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: start;
+  }
+
+  .booking-copy {
+    padding-top: var(--space-md);
+    animation: fadeInUp 0.7s ease forwards;
+  }
+
+  .booking-copy .section-label {
+    margin-bottom: var(--space-md);
+  }
+
+  .booking-copy h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .booking-desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: var(--space-xl);
+    max-width: 440px;
+  }
+
+  .booking-benefits {
+    list-style: none;
+    display: grid;
+    gap: 14px;
+    margin-bottom: var(--space-xl);
+  }
+
+  .booking-benefits li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .booking-check {
+    color: var(--blue-bright);
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .booking-trust {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    letter-spacing: 0.04em;
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: 100px;
+  }
+
+  .booking-trust-icon { font-size: 0.9rem; }
+
+  .booking-calendar-wrap {
+    animation: fadeInUp 0.7s ease 0.2s forwards;
+    opacity: 0;
+  }
+
+  .booking-calendar-glass {
+    background: rgba(11,22,41,0.7);
+    border: 1px solid rgba(59,130,246,0.15);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 0 1px rgba(59,130,246,0.08);
+    transition: box-shadow var(--transition);
+  }
+
+  .booking-calendar-glass:hover {
+    box-shadow: 0 24px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(59,130,246,0.2), 0 0 40px rgba(59,130,246,0.06);
+  }
+
+  .booking-calendar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border-subtle);
+    background: rgba(255,255,255,0.02);
+  }
+
+  .booking-cal-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--blue-electric);
+    animation: dotPulse 2s ease infinite;
+    flex-shrink: 0;
+  }
+
+  .booking-cal-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+  }
+
+  .booking-iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    display: block;
+    background: transparent;
+  }
+
+  /* ============================================
+     PRICING CONSULT LINK
+  ============================================ */
+  .pricing-consult-link {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    letter-spacing: 0.04em;
+    transition: color var(--transition);
+    cursor: pointer;
+  }
+
+  .pricing-consult-link:hover {
+    color: var(--blue-bright);
+  }
+
+  /* ============================================
+     BOOKING RESPONSIVE
+  ============================================ */
+  @media (max-width: 1024px) {
+    .booking-grid {
+      grid-template-columns: 1fr;
+    }
+    .booking-calendar-wrap {
+      opacity: 1;
+    }
+    .booking-iframe {
+      height: 520px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .booking-iframe {
+      height: 460px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -1696,7 +1895,7 @@
       <li><a href="#how-it-works">How It Works</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="https://wa.me/919011395656" class="nav-cta">Book a Call →</a></li>
+      <li><a href="https://calendar.google.com/calendar/u/0/appointments/schedules/XXXXXXXX" target="_blank" class="nav-cta">Book a Call →</a></li>
     </ul>
     <div class="nav-mobile-btn" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -1725,11 +1924,11 @@
             We build complete lead systems for small real estate agencies — instant WhatsApp alerts, high-converting landing pages, and structured CRM automation. Every second counts.
           </p>
           <div class="hero-cta-group">
-            <a href="https://wa.me/919011395656" class="btn-primary">
-              <span>→</span> Get a Free System Audit
+            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/XXXXXXXX" target="_blank" class="btn-primary btn-booking">
+              <span>📅</span> Book Free System Audit
             </a>
-            <a href="#solution" class="btn-secondary">
-              See How It Works
+            <a href="https://wa.me/919011395656" target="_blank" class="btn-secondary">
+              <span>💬</span> WhatsApp Us
             </a>
           </div>
           <div class="hero-trust">
@@ -1969,8 +2168,54 @@
   </section>
 
   <!-- ============================================
-       TESTIMONIALS
+       BOOKING SECTION
   ============================================ -->
+  <section id="booking">
+    <div class="container">
+      <div class="booking-grid">
+        <div class="booking-copy">
+          <div class="section-label">Free Audit</div>
+          <h2>Book Your Free<br>Lead System Audit</h2>
+          <p class="booking-desc">
+            In 15 minutes, we'll identify exactly where your agency is losing leads and give you a clear automation roadmap — at zero cost.
+          </p>
+          <ul class="booking-benefits">
+            <li>
+              <span class="booking-check">→</span>
+              Identify lost lead points in your current setup
+            </li>
+            <li>
+              <span class="booking-check">→</span>
+              Improve response speed with instant alert systems
+            </li>
+            <li>
+              <span class="booking-check">→</span>
+              Receive a custom automation roadmap for your agency
+            </li>
+          </ul>
+          <div class="booking-trust">
+            <span class="booking-trust-icon">🔒</span>
+            15-minute call. No obligation. No sales pressure.
+          </div>
+        </div>
+        <div class="booking-calendar-wrap">
+          <div class="booking-calendar-glass">
+            <div class="booking-calendar-header">
+              <span class="booking-cal-dot"></span>
+              <span class="booking-cal-label">Schedule a Call · EstateLead Systems</span>
+            </div>
+            <iframe
+              src="https://calendar.google.com/calendar/u/0/appointments/schedules/XXXXXXXX"
+              class="booking-iframe"
+              frameborder="0"
+              title="Book a Free System Audit"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section id="testimonials">
     <div class="container">
       <div class="section-header">
@@ -2060,6 +2305,7 @@
           <a href="https://wa.me/919011395656" class="btn-secondary" style="width:100%;justify-content:center;">
             Get Started →
           </a>
+          <a href="#booking" class="pricing-consult-link">Or Book Free Consultation</a>
         </div>
 
         <!-- Growth (Featured) -->
@@ -2086,6 +2332,7 @@
           <a href="https://wa.me/919011395656" class="btn-primary" style="width:100%;justify-content:center;">
             Start with Growth →
           </a>
+          <a href="#booking" class="pricing-consult-link">Or Book Free Consultation</a>
         </div>
 
         <!-- Custom -->
@@ -2109,6 +2356,7 @@
           <a href="https://wa.me/919011395656" class="btn-secondary" style="width:100%;justify-content:center;">
             Schedule a Call →
           </a>
+          <a href="#booking" class="pricing-consult-link">Or Book Free Consultation</a>
         </div>
 
       </div>
@@ -2226,11 +2474,11 @@
           Every day without a proper lead system is another day you're handing deals to your competition. Let's fix that — starting with a free 45-minute system audit.
         </p>
         <div class="cta-actions">
-          <a href="https://wa.me/919011395656" class="btn-primary">
-            <span>💬</span> Book Free System Audit on WhatsApp
+          <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/XXXXXXXX" target="_blank" class="btn-primary btn-booking">
+            <span>📅</span> Book Your Free Audit
           </a>
-          <a href="https://mail.google.com/mail/?view=cm&to=liquidgains1204@gmail.com" target="_blank" class="btn-secondary">
-            Email Us Instead
+          <a href="https://wa.me/919011395656" target="_blank" class="btn-secondary">
+            <span>💬</span> Or Message Us on WhatsApp
           </a>
         </div>
         <div class="cta-note">No sales pressure · 45-minute call · Actionable insights guaranteed</div>
